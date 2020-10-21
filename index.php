@@ -67,6 +67,9 @@ function validateEmail($email)
 // проверка на отсутствие доменного имении gmail в эл. адресе
 function checkDomenOnGmail($email)
 {
+  // Можно проверить емейл на отсутствие домена 'gmail' таким способом:
+  // $reg = '#^[0-9a-zA-Z-.]+@[^g][a-z]+\.[a-z]{2,3}$#';
+
   preg_match('#^[0-9a-zA-Z-.]+@([a-z]+)\.[a-z]{2,3}$#', $email, $matches);
   $domenName = $matches[1];
   $checkDomen = 'gmail';
